@@ -19,8 +19,8 @@ public class Course {
         return this.id + " " + this.title + " " + this.description;
     }
 
-    void getStudents() {
-        CourseEnrollment.getStudentsByCourse(this);
+    ArrayList<Student> getStudents() {
+        return CourseEnrollment.getStudentsByCourse(this);
     }
 
     public int getId() {

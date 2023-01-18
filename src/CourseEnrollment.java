@@ -16,25 +16,32 @@ public class CourseEnrollment {
         list.add(this);
     }
 
-    static void getCoursesByStudent(Student student) {
+    static ArrayList<Course> getCoursesByStudent(Student student) {
+        ArrayList<Course> courses = new ArrayList<>();
         for (CourseEnrollment courseEnrollment : list) {
             if (student.getId() == courseEnrollment.student.getId()) {
-                System.out.println("ID зачисления: " + courseEnrollment.id);
-                System.out.print(courseEnrollment.student + " - ");
-                System.out.println(courseEnrollment.course);
-                System.out.println();
+                courses.add(courseEnrollment.course);
             }
         }
+        return courses;
     }
 
-    static void getStudentsByCourse(Course course) {
+    static ArrayList<Student> getStudentsByCourse(Course course) {
+        ArrayList<Student> students = new ArrayList<>();
         for (CourseEnrollment courseEnrollment : list) {
             if (courseEnrollment.course.getId() == course.getId()) {
-                System.out.println("ID зачисления: " + courseEnrollment.id);
-                System.out.print(courseEnrollment.course + " - ");
-                System.out.println(courseEnrollment.student);
-                System.out.println();
+               students.add(courseEnrollment.student);
             }
         }
+        return students;
+    }
+
+    static CourseEnrollment getCourseEnrollment(Student student, Course course) {
+        for (CourseEnrollment ce : list) {
+            if (ce.student == student && ce.course == course) {
+                return ce;
+            }
+        }
+        return new CourseEnrollment(student, course);
     }
 }

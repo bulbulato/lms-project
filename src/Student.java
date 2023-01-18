@@ -51,9 +51,11 @@ public class Student {
         Student.list = list;
     }
 
-    void getCourses() {
-        CourseEnrollment.getCoursesByStudent(this);
+    ArrayList<Course> getCourses() {
+        return CourseEnrollment.getCoursesByStudent(this);
     }
 
-
+    ArrayList<Integer> getMarks(Course course) {
+        return AcademicPerformance.getMarksByStudentAndCourse(this, course);
+    }
 }
