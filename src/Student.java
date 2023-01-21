@@ -58,4 +58,12 @@ public class Student {
     ArrayList<Integer> getMarks(Course course) {
         return AcademicPerformance.getMarksByStudentAndCourse(this, course);
     }
+
+    void getMarks() {
+        System.out.println(this.name + " " + this.surname);
+        for (Course course : this.getCourses()) {
+            System.out.println(course.getTitle() + " " + course.getDescription() + ": ");
+            System.out.println(AcademicPerformance.getMarksByStudentAndCourse(this, course));
+        }
+    }
 }
