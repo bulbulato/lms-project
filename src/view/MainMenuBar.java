@@ -1,4 +1,10 @@
+package view;
+
+import view.student.AddStudentFrame;
+
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class MainMenuBar extends JMenuBar {
     public MainMenuBar(){
@@ -30,6 +36,14 @@ public class MainMenuBar extends JMenuBar {
         newItem.add(newCourse);
         file.add(settings);
         file.add(exit);
+
+        newStudent.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new AddStudentFrame();
+            }
+        });
+
         return file;
     }
 }

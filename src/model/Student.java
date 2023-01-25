@@ -1,3 +1,6 @@
+package model;
+
+import javax.swing.table.DefaultTableModel;
 import java.util.ArrayList;
 
 public class Student {
@@ -6,6 +9,8 @@ public class Student {
     private String surname;
 
     static ArrayList<Student> list = new ArrayList<>();
+    static String[] headers = {"ID", "Name", "Surname"};
+    public static DefaultTableModel model = new DefaultTableModel(headers, 0);
     private static int lastID = 0;
 
     public Student(String name, String surname) {
@@ -13,6 +18,16 @@ public class Student {
         this.name = name;
         this.surname = surname;
         list.add(this);
+        addRow(this);
+    }
+    public static void addRow(Student student){
+        model.addRow(
+                new Object[] {
+                        student.id,
+                        student.name,
+                        student.surname
+
+                });
     }
 
     public String toString() {
@@ -67,3 +82,5 @@ public class Student {
         }
     }
 }
+
+//MVC - Model View Controller
