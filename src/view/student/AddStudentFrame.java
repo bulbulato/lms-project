@@ -11,7 +11,7 @@ public class AddStudentFrame extends JFrame {
         setLayout(new FlowLayout());
         add(new AddStudentPanel());
 
-        setVisible(true);
+        setVisible(false);
 
     }
 }

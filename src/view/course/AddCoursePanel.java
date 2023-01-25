@@ -1,15 +1,14 @@
-package view.student;
+package view.course;
 
 import model.Student;
-import view.MainFrame;
+import view.student.AddStudentPanel;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class AddStudentPanel extends JPanel {
-    public AddStudentPanel() {
-
+public class AddCoursePanel extends JPanel {
+    public AddCoursePanel() {
         JTextField name = new JTextField(10);
         JTextField surname = new JTextField(10);
 
@@ -22,7 +21,6 @@ public class AddStudentPanel extends JPanel {
                     new Student(name.getText(), surname.getText());
                     name.setText("");
                     surname.setText("");
-                    MainFrame.addStudentFrame.setVisible(false);
                 }
             }
         });

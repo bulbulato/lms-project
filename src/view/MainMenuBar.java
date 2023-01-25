@@ -1,5 +1,6 @@
 package view;
 
+import view.course.AddCourseFrame;
 import view.student.AddStudentFrame;
 
 import javax.swing.*;
@@ -43,6 +44,14 @@ public class MainMenuBar extends JMenuBar {
                 new AddStudentFrame();
             }
         });
+
+        newCourse.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new AddCourseFrame();
+            }
+        });
+
 
         return file;
     }
